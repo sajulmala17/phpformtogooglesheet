@@ -5,7 +5,7 @@ require_once 'gapi/vendor/autoload.php';
 // Inisialisasi client Google Sheets API
 $client = new Google_Client();
 $client->setApplicationName('SheetPHP');
-$client->setDeveloperKey("f561a5e633a447679094e3e23a7d7470c234a60e");
+$client->setDeveloperKey("your_developer_key");
 $client->setScopes(Google_Service_Sheets::SPREADSHEETS);
 $client->setAuthConfig('credentials.json');
 
@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Mengirim data ke Google Sheet
   $service = new Google_Service_Sheets($client);
-  $spreadsheetId = "1v6LpXMY1o0CmuExmLGiMFn0qcIJ0nNvkk4f_qznbIdI";
+  $spreadsheetId = "Your_spread_sheetID eg: 1v6LpXMY1o0CmuExmLGiMFn0qcIJ0nNvkk5f_qznbLdL";
   $range = "Sheet1!A2:D2";
   $values = [[$nama, $jenis_kelamin, $umur, $tanggal_lahir]];
   $body = new Google_Service_Sheets_ValueRange(['values' => $values]);
